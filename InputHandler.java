@@ -25,7 +25,7 @@ public class InputHandler {
      * @return true if valid and exectued and false if not
      */
     public boolean playCadence(int num){
-        if (num >-1 && num < 4){
+        if (num >=0 && num < 4){
             commands.get(num).execute();
             return true;
         }
