@@ -12,9 +12,9 @@ public class InputHandler {
     */
     public InputHandler(MilitaryCadence cadence){
         commands = new ArrayList<Command>();
-        Command command1 = new IDontKnowCommand();
-        Command command3 = new EverywhereCommand();
-        Command command2 = new InArmyCommand();
+        Command command1 = new IDontKnowCommand(cadence);
+        Command command3 = new EverywhereCommand(cadence);
+        Command command2 = new InArmyCommand(cadence);
         commands.add(command1);
         commands.add(command2);
         commands.add(command3);
@@ -25,7 +25,7 @@ public class InputHandler {
      * @return true if valid and exectued and false if not
      */
     public boolean playCadence(int num){
-        if (num >=0 && num < 4){
+        if (num >=0 && num < 3){
             commands.get(num).execute();
             return true;
         }
